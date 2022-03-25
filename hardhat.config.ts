@@ -30,6 +30,20 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    matic: {
+      url: "https://rpc-mainnet.maticvigil.com",
+      accounts:
+        process.env.MAIN_PRIVATE_KEY !== undefined
+          ? [process.env.MAIN_PRIVATE_KEY]
+          : [],
+    },
+    matictest: {
+      url: "https://rpc-mumbai.maticvigil.com",
+      accounts:
+        process.env.TEST_PRIVATE_KEY !== undefined
+          ? [process.env.TEST_PRIVATE_KEY]
+          : [],
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
